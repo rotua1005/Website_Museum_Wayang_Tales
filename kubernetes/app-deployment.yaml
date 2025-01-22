@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: museum-wayang
-          image: rotua10/uas-wayang:latest # Ganti dengan image yang benar
+          image: rotua10/uas-wayang:latest  # Ganti dengan image yang benar
           ports:
             - containerPort: 3000
           env:
@@ -26,4 +26,9 @@ spec:
               value: "root"
             - name: DB_NAME
               value: "Wayang Tales"
+          resources:
+            requests:
+              cpu: 200m  # Minimum CPU request
+            limits:
+              cpu: 500m  # Maximum CPU limit
       restartPolicy: Always
