@@ -8,6 +8,5 @@ spec:
     app: museum-wayang
   ports:
     - protocol: TCP
-      port: 3002
-      targetPort: 3002
-      nodePort: 30002  # Port yang akan diakses di host (opsional)
+      port: 8080
+      targetPort: 8080
