@@ -1,7 +1,7 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: muserum-wayang-hpa
+  name: museum-wayang-hpa
 spec:
   scaleTargetRef:
     apiVersion: apps/v1

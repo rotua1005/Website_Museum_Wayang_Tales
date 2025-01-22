@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: museum-wayang-argo-application
+  namespace: argocd
+spec:
+  project: museum-wayang
+
+  source:
+    repoURL: https://github.com/rotua1005/Website_Museum_Wayang_Tales.git
+    targetRevision: HEAD
+    path: "kubernetes"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: museum-wayang
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
