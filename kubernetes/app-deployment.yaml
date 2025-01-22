@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: museum-wayang
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: museum-wayang
+  template:
+    metadata:
+      labels:
+        app: museum-wayang
+    spec:
+      containers:
+        - name: museum-wayang
+          image: rotua10/uas-wayang:latest # Ganti dengan image yang benar
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DB_HOST
+              value: "db"
+            - name: DB_USER
+              value: "root"
+            - name: DB_PASS
+              value: "root"
+            - name: DB_NAME
+              value: "Wayang Tales"
+      restartPolicy: Always
