@@ -4,7 +4,7 @@ metadata:
   name: museum-wayang-argo-application
   namespace: argocd1
 spec:
-  project: museum-wayang
+  project: default
 
   source:
     repoURL: https://github.com/rotua1005/Website_Museum_Wayang_Tales.git
