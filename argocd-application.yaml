@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: museum-wayang-argo-application
-  namespace: argocd1
+  namespace: argocd
 spec:
   project: default
 
@@ -10,7 +10,7 @@ spec:
     repoURL: https://github.com/rotua1005/Website_Museum_Wayang_Tales.git
     targetRevision: HEAD
     path: kubernetes
-  destination:
+  destination: 
     server: https://kubernetes.default.svc
     namespace: museum-wayang
 
